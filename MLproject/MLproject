@@ -1,0 +1,11 @@
+name: personal-finance-mlflow
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      n_estimators: {type: int, default: 1000}
+      max_depth: {type: int, default: 40}
+      dataset: {type: string, default: "synthetic_personal_finance_dataset_preprocessing.csv"}
+    command: "python modelling.py {n_estimators} {max_depth} {dataset}"
